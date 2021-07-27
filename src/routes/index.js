@@ -4,7 +4,6 @@ import Route from './Route';
 
 import Home from '../pages/Home';
 import Cadastros from '../pages/Cadastros';
-import AlunoCadastro from '../pages/Cadastros/AlunoCadastro';
 import AtividadeCadastro from '../pages/Cadastros/AtividadeCadastro';
 import BancoCadastro from '../pages/Cadastros/BancoCadastro';
 import EquipamentoCadastro from '../pages/Cadastros/EquipamentoCadastro';
@@ -12,7 +11,8 @@ import HorarioCadastro from '../pages/Cadastros/HorarioCadastro';
 import ProdutoCadastro from '../pages/Cadastros/ProdutoCadastro';
 import ProfissionalCadastro from '../pages/Cadastros/ProfissionalCadastro';
 import UsuarioCadastro from '../pages/Cadastros/UsuarioCadastro';
-import Alunos from '../pages/Alunos';
+import AlunoCadastro from '../pages/Alunos/Criar';
+import ListarAlunos from '../pages/Alunos/Listar';
 import Caixa from '../pages/Caixa';
 import Compras from '../pages/Compras';
 import Horarios from '../pages/Horarios';
@@ -32,7 +32,7 @@ function Routes() {
             <Route path="/cadastro/produto" exact component={ProdutoCadastro} />
             <Route path="/cadastro/profissional" exact component={ProfissionalCadastro} />
             <Route path="/cadastro/usuario" exact component={UsuarioCadastro} />
-            <Route path="/alunos" exact component={Alunos} />
+            <Route path="/alunos" exact component={ListarAlunos} />
             <Route path="/caixa" exact component={Caixa} />
             <Route path="/compras" exact component={Compras} />
             <Route path="/horarios" exact component={Horarios} />
