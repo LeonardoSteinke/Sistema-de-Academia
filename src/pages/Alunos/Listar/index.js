@@ -7,15 +7,15 @@ import { useHistory } from 'react-router-dom';
 const List = () => {
   const history = useHistory();
 
-  const [students, setStudents] = React.useState([{
-    name: "Leonardo",
-    email: "leo@gmail.com",
-    enrollment: "123"
-  }]);
+  const [students, setStudents] = React.useState([]);
 
   useEffect(() => {
     //search from firebase
-    setStudents([])
+    setStudents([{
+      name: "Leonardo",
+      email: "leo@gmail.com",
+      enrollment: "123"
+    }])
   }, []);
 
   return (
