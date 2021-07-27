@@ -8,9 +8,9 @@ function Route({ component: Component, ...rest }) {
             {...rest}
             render={() => (
                 <>
-                    <DefaultLayout />
-
-                    <Component />
+                    <DefaultLayout>
+                        <Component />
+                    </DefaultLayout>
                 </>
             )}
         />
