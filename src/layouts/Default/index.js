@@ -72,7 +72,7 @@ const DefaultLayout = ({ children }) => {
             noWrap
             className={classes.title}
           >
-            LEONARDO
+            SmartAcademy
           </Typography>
           <div>
             <IconButton
