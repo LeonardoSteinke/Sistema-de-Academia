@@ -10,12 +10,14 @@ const List = () => {
   const [equipment, setEquipment] = React.useState([]);
 
   useEffect(() => {
-    //search from firebase
-    setEquipment([{
-      name: "Leonardo",
-      email: "leo@gmail.com",
-      enrollment: "123"
-    }])
+    // search from firebase
+    setEquipment([
+      {
+        name: 'Leonardo',
+        email: 'leo@gmail.com',
+        enrollment: '123',
+      },
+    ]);
   }, []);
 
   return (
@@ -33,7 +35,7 @@ const List = () => {
             tooltip: 'Adicionar equipamento',
             isFreeAction: true,
             onClick: () => history.push(`/cadastro/equipamento`),
-          }
+          },
         ]}
         localization={{
           toolbar: {

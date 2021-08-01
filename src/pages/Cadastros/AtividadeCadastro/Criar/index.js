@@ -1,9 +1,9 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 
-import StudentForm from "../components/ActivityForm";
-import Container from "../../../../components/Container";
+import StudentForm from '../components/ActivityForm';
+import Container from '../../../../components/Container';
 
 const CreateActivity = () => {
   const handleCreateActivity = useCallback(

@@ -10,12 +10,14 @@ const List = () => {
   const [bank, setBank] = React.useState([]);
 
   useEffect(() => {
-    //search from firebase
-    setBank([{
-      name: "Leonardo",
-      email: "leo@gmail.com",
-      enrollment: "123"
-    }])
+    // search from firebase
+    setBank([
+      {
+        name: 'Leonardo',
+        email: 'leo@gmail.com',
+        enrollment: '123',
+      },
+    ]);
   }, []);
 
   return (
@@ -33,7 +35,7 @@ const List = () => {
             tooltip: 'Adicionar Banco',
             isFreeAction: true,
             onClick: () => history.push(`/cadastro/banco`),
-          }
+          },
         ]}
         localization={{
           toolbar: {

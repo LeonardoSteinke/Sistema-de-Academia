@@ -10,12 +10,14 @@ const List = () => {
   const [time, setTime] = React.useState([]);
 
   useEffect(() => {
-    //search from firebase
-    setTime([{
-      name: "Leonardo",
-      email: "leo@gmail.com",
-      enrollment: "123"
-    }])
+    // search from firebase
+    setTime([
+      {
+        name: 'Leonardo',
+        email: 'leo@gmail.com',
+        enrollment: '123',
+      },
+    ]);
   }, []);
 
   return (
@@ -33,7 +35,7 @@ const List = () => {
             tooltip: 'Adicionar Horários',
             isFreeAction: true,
             onClick: () => history.push(`/cadastro/horario`),
-          }
+          },
         ]}
         localization={{
           toolbar: {

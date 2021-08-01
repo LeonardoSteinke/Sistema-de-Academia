@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import { Grid } from "@material-ui/core";
+import React, { useState } from 'react';
+import { Grid } from '@material-ui/core';
 
-import { useHistory } from "react-router-dom";
-import Paper from "../../../../../components/Paper";
-import Title from "../../../../../components/Title";
-import TextField from "../../../../../components/TextField";
-import Button from "../../../../../components/Button";
+import { useHistory } from 'react-router-dom';
+import Paper from '../../../../../components/Paper';
+import Title from '../../../../../components/Title';
+import TextField from '../../../../../components/TextField';
+import Button from '../../../../../components/Button';
 
-import "date-fns";
-import DateFnsUtils from "@date-io/date-fns";
+import 'date-fns';
+import DateFnsUtils from '@date-io/date-fns';
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
-} from "@material-ui/pickers";
+} from '@material-ui/pickers';
 
 const ProductForm = ({ title, actionTitle, handleForm }) => {
   const history = useHistory();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [cpf, setCpf] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [cpf, setCpf] = useState('');
   const [dataNascimento, setDataNascimento] = useState(null);
-  const [phone, setPhone] = useState("");
-  const [cellphone, setCellphone] = useState("");
-  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState('');
+  const [cellphone, setCellphone] = useState('');
+  const [address, setAddress] = useState('');
 
   const handleDateChange = (date) => {
     setDataNascimento(date);
@@ -70,7 +70,7 @@ const ProductForm = ({ title, actionTitle, handleForm }) => {
                 value={dataNascimento}
                 onChange={handleDateChange}
                 KeyboardButtonProps={{
-                  "aria-label": "change date",
+                  'aria-label': 'change date',
                 }}
               />
             </MuiPickersUtilsProvider>

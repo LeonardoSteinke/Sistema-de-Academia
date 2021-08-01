@@ -1,17 +1,14 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 
-import StudentForm from "../components/BankForm";
-import Container from "../../../../components/Container";
+import StudentForm from '../components/BankForm';
+import Container from '../../../../components/Container';
 
 const CreateBank = () => {
-  const handlecreateBank = useCallback(
-    async ({ name, email, enrollment }) => {
-      alert(`Enviar para Firebase ${name} ${email} ${enrollment}`);
-    },
-    []
-  );
+  const handlecreateBank = useCallback(async ({ name, email, enrollment }) => {
+    alert(`Enviar para Firebase ${name} ${email} ${enrollment}`);
+  }, []);
 
   return (
     <Container>

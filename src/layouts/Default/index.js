@@ -29,7 +29,6 @@ const DefaultLayout = ({ children }) => {
   const [open, setOpen] = React.useState(true);
   const menuOpen = Boolean(anchorEl);
 
-
   const handleMenu = (e) => {
     setAnchorEl(e.currentTarget);
   };
@@ -60,7 +59,7 @@ const DefaultLayout = ({ children }) => {
             onClick={handleDrawerOpen}
             className={clsx(
               classes.menuButton,
-              open && classes.menuButtonHidden,
+              open && classes.menuButtonHidden
             )}
           >
             <MenuIcon />

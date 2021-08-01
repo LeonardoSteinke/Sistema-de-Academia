@@ -10,12 +10,14 @@ const List = () => {
   const [students, setStudents] = React.useState([]);
 
   useEffect(() => {
-    //search from firebase
-    setStudents([{
-      name: "Leonardo",
-      email: "leo@gmail.com",
-      enrollment: "123"
-    }])
+    // search from firebase
+    setStudents([
+      {
+        name: 'Leonardo',
+        email: 'leo@gmail.com',
+        enrollment: '123',
+      },
+    ]);
   }, []);
 
   return (
@@ -33,7 +35,7 @@ const List = () => {
             tooltip: 'Adicionar Aluno',
             isFreeAction: true,
             onClick: () => history.push(`/cadastro/aluno`),
-          }
+          },
         ]}
         localization={{
           toolbar: {

@@ -1,9 +1,9 @@
-import React, { useCallback } from "react";
+import React, { useCallback } from 'react';
 
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 
-import ProfessionalForm from "../components/ProfessionalForm";
-import Container from "../../../../components/Container";
+import ProfessionalForm from '../components/ProfessionalForm';
+import Container from '../../../../components/Container';
 
 const CreateProfessional = () => {
   const handleCreateProfessional = useCallback(

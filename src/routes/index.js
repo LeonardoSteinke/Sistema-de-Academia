@@ -1,39 +1,39 @@
-import React from "react";
-import { Switch } from "react-router-dom";
-import Route from "./Route";
+import React from 'react';
+import { Switch } from 'react-router-dom';
+import Route from './Route';
 
-import Home from "../pages/Home";
+import Home from '../pages/Home';
 
-import ProdutoCadastro from "../pages/Cadastros/ProdutoCadastro/Criar";
-import ProdutoListar from "../pages/Cadastros/ProdutoCadastro/Listar";
+import ProdutoCadastro from '../pages/Cadastros/ProdutoCadastro/Criar';
+import ProdutoListar from '../pages/Cadastros/ProdutoCadastro/Listar';
 
-import AlunoCadastro from "../pages/Cadastros/AlunoCadastro/Criar";
-import AlunoListar from "../pages/Cadastros/AlunoCadastro/Listar";
+import AlunoCadastro from '../pages/Cadastros/AlunoCadastro/Criar';
+import AlunoListar from '../pages/Cadastros/AlunoCadastro/Listar';
 
-import AtividadeCadastro from "../pages/Cadastros/AtividadeCadastro/Criar";
-import AtividadeListar from "../pages/Cadastros/AtividadeCadastro/Listar";
+import AtividadeCadastro from '../pages/Cadastros/AtividadeCadastro/Criar';
+import AtividadeListar from '../pages/Cadastros/AtividadeCadastro/Listar';
 
-import EquipamentoCadastro from "../pages/Cadastros/EquipamentoCadastro/Criar";
-import EquipamentoListar from "../pages/Cadastros/EquipamentoCadastro/Listar";
+import EquipamentoCadastro from '../pages/Cadastros/EquipamentoCadastro/Criar';
+import EquipamentoListar from '../pages/Cadastros/EquipamentoCadastro/Listar';
 
-import HorarioCadastro from "../pages/Cadastros/HorarioCadastro/Criar";
-import HorarioListar from "../pages/Cadastros/HorarioCadastro/Listar";
+import HorarioCadastro from '../pages/Cadastros/HorarioCadastro/Criar';
+import HorarioListar from '../pages/Cadastros/HorarioCadastro/Listar';
 
-import ProfissionalCadastro from "../pages/Cadastros/ProfissionalCadastro/Criar";
-import ProfissionalListar from "../pages/Cadastros/ProfissionalCadastro/Listar";
+import ProfissionalCadastro from '../pages/Cadastros/ProfissionalCadastro/Criar';
+import ProfissionalListar from '../pages/Cadastros/ProfissionalCadastro/Listar';
 
-import UsuarioCadastro from "../pages/Cadastros/UsuarioCadastro/Criar";
-import UsuarioListar from "../pages/Cadastros/UsuarioCadastro/Listar";
+import UsuarioCadastro from '../pages/Cadastros/UsuarioCadastro/Criar';
+import UsuarioListar from '../pages/Cadastros/UsuarioCadastro/Listar';
 
-import BancoCadastro from "../pages/Cadastros/BancoCadastro/Criar";
-import BancoListar from "../pages/Cadastros/BancoCadastro/Listar";
+import BancoCadastro from '../pages/Cadastros/BancoCadastro/Criar';
+import BancoListar from '../pages/Cadastros/BancoCadastro/Listar';
 
-import Cadastros from "../pages/Cadastros";
+import Cadastros from '../pages/Cadastros';
 
-import Caixa from "../pages/Caixa";
-import Compras from "../pages/Compras";
-import Sistema from "../pages/Sistema";
-import Vendas from "../pages/Vendas";
+import Caixa from '../pages/Caixa';
+import Compras from '../pages/Compras';
+import Sistema from '../pages/Sistema';
+import Vendas from '../pages/Vendas';
 
 function Routes() {
   return (

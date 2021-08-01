@@ -10,12 +10,14 @@ const List = () => {
   const [activity, setActivity] = React.useState([]);
 
   useEffect(() => {
-    //search from firebase
-    setActivity([{
-      name: "Leonardo",
-      email: "leo@gmail.com",
-      enrollment: "123"
-    }])
+    // search from firebase
+    setActivity([
+      {
+        name: 'Leonardo',
+        email: 'leo@gmail.com',
+        enrollment: '123',
+      },
+    ]);
   }, []);
 
   return (
@@ -33,7 +35,7 @@ const List = () => {
             tooltip: 'Adicionar Atividade',
             isFreeAction: true,
             onClick: () => history.push(`/cadastro/atividade`),
-          }
+          },
         ]}
         localization={{
           toolbar: {
