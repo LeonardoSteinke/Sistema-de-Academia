@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { Grid } from '@material-ui/core';
 
 import { useHistory } from 'react-router-dom';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
 import Paper from '../../../../../components/Paper';
 import Title from '../../../../../components/Title';
 import TextField from '../../../../../components/TextField';
 import Button from '../../../../../components/Button';
 
 import 'date-fns';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
 
 const StudentForm = ({ title, actionTitle, handleForm }) => {
   const history = useHistory();

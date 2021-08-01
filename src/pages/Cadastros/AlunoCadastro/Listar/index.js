@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-
 import MaterialTable from 'material-table';
 
 import { useHistory } from 'react-router-dom';
+import firebase from '../../../../api/firebase';
 
 const List = () => {
   const history = useHistory();
@@ -10,14 +10,39 @@ const List = () => {
   const [students, setStudents] = React.useState([]);
 
   useEffect(() => {
-    // search from firebase
-    setStudents([
-      {
-        name: 'Leonardo',
-        email: 'leo@gmail.com',
-        enrollment: '123',
-      },
-    ]);
+    async function loadStudents() {
+      try {
+        const db = firebase.firestore();
+
+        const alunosRef = db.collection('alunos');
+
+        const results = await alunosRef.get();
+
+        const data = results.docs.map((item) => item.data());
+
+        data.forEach(async (student) => {
+          const getUsuario = await db
+            .collection('usuarios')
+            .doc(student.usuario.id)
+            .get();
+
+          const usuario = getUsuario.data();
+
+          setStudents((state) => [
+            ...state,
+            {
+              name: usuario.nome,
+              email: usuario.email,
+              enrollment: student.matricula.id,
+            },
+          ]);
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    loadStudents();
   }, []);
 
   return (

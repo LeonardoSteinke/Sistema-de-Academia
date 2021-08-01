@@ -30,23 +30,11 @@ export const MainListItems = () => {
         </ListItemIcon>
         <ListItemText primary="Alunos" />
       </ListItem>
-      <ListItem button onClick={() => history.push('/horarios')}>
-        <ListItemIcon>
-          <Schedule />
-        </ListItemIcon>
-        <ListItemText primary="Horários" />
-      </ListItem>
       <ListItem button onClick={() => history.push('/atividade')}>
         <ListItemIcon>
           <DirectionsBike />
         </ListItemIcon>
         <ListItemText primary="Atividades" />
-      </ListItem>
-      <ListItem button onClick={() => history.push('/banco')}>
-        <ListItemIcon>
-          <AccountBalance />
-        </ListItemIcon>
-        <ListItemText primary="Banco" />
       </ListItem>
       <ListItem button onClick={() => history.push('/equipamento')}>
         <ListItemIcon>
@@ -71,30 +59,6 @@ export const MainListItems = () => {
           <People />
         </ListItemIcon>
         <ListItemText primary="Usuários" />
-      </ListItem>
-      <ListItem button onClick={() => history.push('/vendas')}>
-        <ListItemIcon>
-          <StoreOutlined />
-        </ListItemIcon>
-        <ListItemText primary="Vendas" />
-      </ListItem>
-      <ListItem button onClick={() => history.push('/compras')}>
-        <ListItemIcon>
-          <Store />
-        </ListItemIcon>
-        <ListItemText primary="Compras" />
-      </ListItem>
-      <ListItem button onClick={() => history.push('/caixa')}>
-        <ListItemIcon>
-          <Subject />
-        </ListItemIcon>
-        <ListItemText primary="Caixa" />
-      </ListItem>
-      <ListItem button onClick={() => history.push('/sistema')}>
-        <ListItemIcon>
-          <Settings />
-        </ListItemIcon>
-        <ListItemText primary="Sistema" />
       </ListItem>
     </div>
   );

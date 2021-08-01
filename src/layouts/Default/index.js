@@ -98,7 +98,7 @@ const DefaultLayout = ({ children }) => {
               open={menuOpen}
               onClose={handleClose}
             >
-              <MenuItem onClick={() => { }}>Sair</MenuItem>
+              <MenuItem onClick={() => null}>Sair</MenuItem>
             </Menu>
           </div>
         </Toolbar>

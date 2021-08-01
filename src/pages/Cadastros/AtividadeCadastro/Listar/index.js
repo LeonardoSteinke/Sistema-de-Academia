@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import MaterialTable from 'material-table';
 
 import { useHistory } from 'react-router-dom';
+import firebase from '../../../../api/firebase';
 
 const List = () => {
   const history = useHistory();
@@ -10,14 +11,41 @@ const List = () => {
   const [activity, setActivity] = React.useState([]);
 
   useEffect(() => {
-    // search from firebase
-    setActivity([
-      {
-        name: 'Leonardo',
-        email: 'leo@gmail.com',
-        enrollment: '123',
-      },
-    ]);
+    async function loadActivities() {
+      try {
+        const db = firebase.firestore();
+
+        const atividadesRef = db.collection('atividades');
+
+        const results = await atividadesRef.get();
+
+        const data = results.docs.map((item) => item.data());
+
+        data.forEach(async (activ) => {
+          const getProfessor = await db
+            .collection('usuarios')
+            .doc(activ.professor.id)
+            .get();
+
+          const professor = getProfessor.data();
+
+          setActivity((state) => [
+            ...state,
+            {
+              name: activ.nome,
+              days: activ.dias,
+              locale: activ.local,
+              teacher: professor.nome,
+              vagas: activ.vagas,
+            },
+          ]);
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    loadActivities();
   }, []);
 
   return (
@@ -25,8 +53,10 @@ const List = () => {
       <MaterialTable
         columns={[
           { title: 'Nome', field: 'name' },
-          { title: 'E-mail', field: 'email' },
-          { title: 'Matrícula', field: 'enrollment' },
+          { title: 'Local', field: 'locale' },
+          { title: 'Dias', field: 'days' },
+          { title: 'Professor', field: 'teacher' },
+          { title: 'Vagas', field: 'vagas' },
         ]}
         data={activity}
         actions={[

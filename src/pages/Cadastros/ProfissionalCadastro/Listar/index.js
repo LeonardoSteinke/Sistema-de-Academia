@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import MaterialTable from 'material-table';
 
 import { useHistory } from 'react-router-dom';
+import firebase from '../../../../api/firebase';
 
 const List = () => {
   const history = useHistory();
@@ -10,14 +11,39 @@ const List = () => {
   const [professional, setProfessional] = React.useState([]);
 
   useEffect(() => {
-    // search from firebase
-    setProfessional([
-      {
-        name: 'Leonardo',
-        email: 'leo@gmail.com',
-        enrollment: '123',
-      },
-    ]);
+    async function loadProfessional() {
+      try {
+        const db = firebase.firestore();
+
+        const professionalRef = db.collection('profissionais');
+
+        const results = await professionalRef.get();
+
+        const data = results.docs.map((item) => item.data());
+
+        data.forEach(async (prof) => {
+          const getUsuario = await db
+            .collection('usuarios')
+            .doc(prof.usuario.id)
+            .get();
+
+          const usuario = getUsuario.data();
+
+          setProfessional((state) => [
+            ...state,
+            {
+              name: usuario.nome,
+              cargo: prof.cargo,
+              salario: prof.salario,
+            },
+          ]);
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    loadProfessional();
   }, []);
 
   return (
@@ -25,8 +51,8 @@ const List = () => {
       <MaterialTable
         columns={[
           { title: 'Nome', field: 'name' },
-          { title: 'E-mail', field: 'email' },
-          { title: 'Matrícula', field: 'enrollment' },
+          { title: 'Cargo', field: 'cargo' },
+          { title: 'Salário', field: 'salario' },
         ]}
         data={professional}
         actions={[
